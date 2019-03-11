@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link href="https://cdn.bootcss.com/highlight.js/9.14.2/styles/vs.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .center {
+            height: 100%;
+            display: grid;
+            grid-template-columns: auto 400px auto;
+            grid-template-rows: auto 200px auto;
+            grid-template-areas: '. . .'
+                '. time .'
+                '. test .';
+        }
+
+        .clock {
+            grid-area: time;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'PingFang SC', Calibri, 'Trebuchet MS', sans-serif;
+            display: grid;
+            grid-template-columns: 15% 15% 5% 15% 15% 5% 15% 15%;
+            grid-template-rows: 90px;
+            user-select: none;
+        }
+
+        .clock span,
+        .clock div {
+            line-height: 80px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .clock span {
+            line-height: 80px;
+        }
+
+        .clock div.timeNum {
+            border: 1px #ccc solid;
+            border-radius: 5px;
+            margin: 0 2.5px;
+            box-shadow: 0 0 3px #ccc;
+            background-color: #d6d6d6;
+            transition: transform .3s .2s;
+            transform-origin: center 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="clock">
+            <div class="timeNum"></div>
+            <div class="timeNum"></div>
+            <span>:</span>
+            <div class="timeNum"></div>
+            <div class="timeNum"></div>
+            <span>:</span>
+            <div class="timeNum"></div>
+            <div class="timeNum"></div>
+        </div>
+        <!-- <div id="testDIV"><span id="testbef" data-before="''" date-after="''">hello world!</span></div> -->
+    </div>
+
+    <script src="https://cdn.bootcss.com/highlight.js/9.14.2/highlight.min.js"></script>
+    <script>
+        var fade = ['scale(0,0)', 'scale(1,1)'];
+        // var fade = ['RotateX(90deg)', 'RotateX(0deg)'];
+        var cnt = [0, 0, 0, 0, 0, 0],
+            number = [-1, -1, -1, -1, -1, -1];
+        var el;
+
+        function refreshTime() {
+            var timeNow = new Date().toTimeString().substring(0, 8).replace(':', '').replace(':', '');
+            var els = document.getElementsByClassName('timeNum');
+            for (var i = 0; i < els.length; i++) {
+                if (timeNow[i] == number[i]) continue;
+                var el = els[i];
+                cnt[i] = (cnt[i] + 1) % 2;
+                if (cnt[i] != 0) {
+                    el.innerText = timeNow[i];
+                    number[i] = timeNow[i];
+                    el.style.transitionDelay = '0s';
+                } else el.style.transitionDelay = '0.2s';
+                el.style.transform = fade[cnt[i]];
+                el.style.webkitTransform = fade[cnt[i]];
+            }
+
+        };
+        let t = setInterval(refreshTime, 500);
+    </script>
+</body>
+
+</html>
