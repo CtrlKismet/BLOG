@@ -91,5 +91,5 @@ $(document).ready(function () {
     // loadEl();
 });
 
-let rootsrc = "http://www.ctrlkismet.top/";
-// let rootsrc = "http://localhost:50542/";
+// let rootsrc = "http://www.ctrlkismet.top/";
+let rootsrc = "http://localhost:50542/";

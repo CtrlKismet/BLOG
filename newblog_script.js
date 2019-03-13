@@ -89,7 +89,6 @@ let blogMsg = new Vue({
 });
 
 window.onload = function () {
-    get_time();
     simplemde = new SimpleMDE({
         element: document.getElementById("mdtest"),
         autoDownloadFontAwesome: false,
