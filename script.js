@@ -31,11 +31,12 @@ function get_time() {
         '星期' + chznday[temp_time_for_date.getDay()];
 }
 
-var preTitle = document.title;
+var preTitle;
 
 document.addEventListener('visibilitychange', function () {
     var isHidden = document.hidden;
     if (isHidden) {
+        preTitle = document.title;
         document.title = "这里是CtrlKismet的博客";
         clearInterval(refresh_time_interval);
         document.getElementById('web_icon').href = "/images/faviconOUT.ico";
@@ -91,5 +92,16 @@ $(document).ready(function () {
     // loadEl();
 });
 
-// let rootsrc = "http://www.ctrlkismet.top/";
-let rootsrc = "http://localhost:50542/";
+let rootsrc = "http://www.ctrlkismet.top/";
+// let rootsrc = "http://localhost:50542/";
+
+function listen_login(authent) {
+    if (authent === 'True') return;
+    var keyCode = event.keyCode;
+    var altKey = event.altKey;
+    console.log(altKey);
+    console.log(keyCode);
+    if (altKey && keyCode === 76) {
+        window.location.href = rootsrc + "authorization/login";
+    }
+}

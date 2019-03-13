@@ -149,6 +149,11 @@ hr {
     content: "\f08b";
 }
 
+.fa-edit:before,
+.fa-pencil-square-o:before {
+    content: "\f044";
+}
+
 @-webkit-keyframes fa-spin {
     0% {
         -webkit-transform: rotate(0deg);

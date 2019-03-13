@@ -23,7 +23,9 @@
             <main id="home">
                 <input id="blog_detail_ID" style="height:0;width:0;display:none;" value="4" />
                 <div class="blog" id="blog_detail">
-                    <div class="blog-header">
+                    <i class="fa fa-edit" style="float:right;" onclick="window.location.href=rootsrc+'authorization/management?id='+document.getElementById('blog_detail_ID').value"></i>
+                    <div class="
+                        blog-header">
                         <div class="blog-title">{{blog.title}}</div>
                         <div class="tag-list">
                             <p style="font-size:17px;">标签：</p>
