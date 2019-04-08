@@ -96,5 +96,35 @@ window.onload = function () {
         status: ["lines", "words"],
         tabSize: 4
     });
+    simplemde.codemirror.on('drop', function (editor, e) {
+        console.log("codemirror on drop");
+
+        if (!(e.dataTransfer && e.dataTransfer.files)) {
+            alert("该浏览器不支持操作");
+        }
+        let dataList = e.dataTransfer.files;
+        console.log(dataList);
+        let formData = new FormData();
+        formData.append('file', dataList[0]);
+        $.ajax({
+            url: rootsrc + 'api/image',
+            type: 'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (name) {
+                var img = '![](' + rootsrc + 'api/image/' + name + ')';
+                var content = simplemde.value();
+                simplemde.value(content + '\n' + img);
+            }
+        });
+    });
     $(".editor-preview-side").addClass("markdown-body");
-}
+};
+
+window.addEventListener("drop", function (e) {
+    e = e || event;
+    if (e.target.className == "CodeMirror-scroll") { // check wich element is our target
+        e.preventDefault();
+    }
+}, false);

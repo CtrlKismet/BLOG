@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>个人博客</title>
-    <link href="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css" rel="stylesheet">
+    <link href="https://cdnjs.loli.net/ajax/libs/simplemde/1.11.2/simplemde.min.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
 </head>
 
@@ -49,7 +49,8 @@
                         </div>
                         <!-- <input type="text" /> -->
                         <div class="tag-list">
-                            <div class="tag" v-for="item in tag" :value="item.id" :style="{backgroundColor:BGcolor[BGcnt[item.id]]}">
+                            <div class="tag" v-for="item in tag" :value="item.id"
+                                :style="{backgroundColor:BGcolor[BGcnt[item.id]]}">
                                 <input type="checkbox" :id="item.id" name="tagID" :value="item.id" style="display:none;"
                                     :checked="BGcnt[item.id]" />
                                 <label :for="item.id" @click="reverseBG(item.id)">{{item.name}}</label>
@@ -90,10 +91,10 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/vue/2.6.10/vue.js"></script>
     <!-- <script src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script> -->
-    <script src="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
     <script src="./script.js"></script>
     <script src="./newblog_script.js"></script>
 </body>
