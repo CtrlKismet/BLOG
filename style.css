@@ -692,6 +692,10 @@ aside [class$=-list] .list-item {
     transition: background-color .4s;
 }
 
+aside [class$=-list] .list-item-active {
+    background-color: #e0e0e0;
+}
+
 aside [class$=-list] .list-item:hover {
     background-color: #ededed;
 }

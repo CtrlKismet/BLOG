@@ -51,6 +51,8 @@ let blogDetail = new Vue({
     }
 });
 
+let menu_index = 0;
+
 let menus = new Vue({
     el: "#list_of_menu",
     data: {
@@ -58,15 +60,14 @@ let menus = new Vue({
     },
     methods: {
         get_menu: function () {
-            let index = 0;
             $('.blog-content')[0].childNodes.forEach(function (value) {
                 if (value.id) {
-                    Vue.set(menus.menu, index, {
+                    Vue.set(menus.menu, menu_index, {
                         title: value.innerText,
-                        pos: index + 1
+                        pos: menu_index + 1
                     });
-                    index++;
-                    value.id = index;
+                    menu_index++;
+                    value.id = menu_index;
                 }
             });
         }
@@ -99,11 +100,29 @@ let preOrnxt = new Vue({
                 preOrnxt.nxt = blogsName[1];
             }
         });
+        // $('.menu-list')[0].children[1].classList.add("list-item-active");
     },
     methods: {
         linkTo: function (value) {
             var nid = parseInt($('#blog_detail_ID')[0].value) + value;
             window.location.href = rootsrc + 'home/blogdetail?id=' + nid;
+        }
+    }
+});
+
+let pre_index = 1;
+
+document.addEventListener('scroll', function () {
+    for (let now_index = 0; now_index < menu_index; now_index++) {
+        const el = document.getElementById(now_index + 1);
+        if (window.scrollY < el.offsetTop) {
+            if (pre_index === now_index || now_index == 0) break;
+            $('.menu-list')[0].children[pre_index].classList.remove("list-item-active");
+            $('.menu-list')[0].children[now_index].classList.add("list-item-active");
+            pre_index = now_index;
+            console.log(now_index);
+            console.log(window.scrollY);
+            break;
         }
     }
 });
