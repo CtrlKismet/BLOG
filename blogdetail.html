@@ -11,7 +11,6 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 
-
 <body>
     <div class="main-page">
         <nav class="head-bar">
@@ -21,7 +20,7 @@
         </nav>
         <div class="content">
             <main id="home">
-                <input id="blog_detail_ID" style="height:0;width:0;display:none;" value="3" />
+                <input id="blog_detail_ID" style="height:0;width:0;display:none;" value="10" />
                 <div class="blog" id="blog_detail">
                     <i class="fa fa-edit" style="float:right;cursor: pointer;"
                         onclick="window.location.href=rootsrc+'authorization/management?id='+document.getElementById('blog_detail_ID').value"></i>
@@ -54,6 +53,7 @@
                         <i class="fa fa-arrow-right"></i>
                     </div>
                 </div>
+                <section id="isso-thread"></section>
             </main>
             <aside>
                 <div class="clock">
@@ -134,6 +134,7 @@
     <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="./script.js"></script>
     <script src="./blogdetail_script.js"></script>
+    <script data-isso="http://www.ctrlkismet.top:8080/" src="http://www.ctrlkismet.top:8080/js/embed.min.js"></script>
 </body>
 
 </html>

@@ -7,10 +7,10 @@ function refreshTime() {
     var timeNow = new Date().toTimeString().substring(0, 8).replace(':', '').replace(':', '');
     var els = document.getElementsByClassName('timeNum');
     for (var i = 0; i < els.length; i++) {
-        if (timeNow[i] == number[i]) continue;
+        if (timeNow[i] === number[i]) continue;
         var el = els[i];
         cnt[i] = (cnt[i] + 1) % 2;
-        if (cnt[i] != 0) {
+        if (cnt[i] !== 0) {
             el.innerText = timeNow[i];
             number[i] = timeNow[i];
             el.style.transitionDelay = '0s';
@@ -99,8 +99,6 @@ function listen_login(authent) {
     if (authent === 'True') return;
     var keyCode = event.keyCode;
     var altKey = event.altKey;
-    console.log(altKey);
-    console.log(keyCode);
     if (altKey && keyCode === 76) {
         window.location.href = rootsrc + "authorization/login";
     }

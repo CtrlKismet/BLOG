@@ -13,7 +13,7 @@ let homePage = new Vue({
         transMsg: function (data) {
             homePage.blog = data;
             $.each(data, function (idx, value) {
-                homePage.blog[idx].url = rootsrc + "home/blogdetail?id=" + value.id;
+                homePage.blog[idx].url = rootsrc + "home/blogdetail/" + value.id;
                 let addTime = new Date(homePage.blog[idx].addTime);
                 homePage.blog[idx].addYear = addTime.getFullYear();
                 homePage.blog[idx].addMonthDay = (addTime.getMonth() + 1) + '/' + addTime.getDate();

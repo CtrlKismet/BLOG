@@ -512,6 +512,93 @@ hr {
     width: 100%;
 }
 
+/*===================================Comments Settings======================================================*/
+#isso-thread {
+    font-size: .8em;
+    margin-top: 5em !important;
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+#isso-thread h4 {
+    padding: 20px 30px;
+    text-align: right;
+}
+
+#isso-thread .textarea-wrapper {
+    margin: 2.5px 5px !important;
+}
+
+#isso-thread .textarea,
+#isso-thread .preview {
+    min-height: 6em !important;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.isso-postbox {
+    padding: 30px 20px;
+}
+
+.isso-postbox>.form-wrapper .textarea,
+.isso-postbox>.form-wrapper .preview {
+    background-color: #ffffff00 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.isso-postbox>.form-wrapper>.auth-section .input-wrapper {
+    margin: 2.5px 5px !important;
+}
+
+.isso-postbox>.form-wrapper>.auth-section .post-action {
+    max-width: 25%;
+    margin: 2.5px 5px !important;
+}
+
+.isso-postbox>.form-wrapper>.auth-section {
+    margin-top: .5em;
+}
+
+.isso-postbox>.form-wrapper>.auth-section .input-wrapper input {
+    font-size: .8em;
+    background-color: #ffffff00 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: none !important;
+}
+
+#isso-thread .textarea:focus,
+#isso-thread input:focus {
+    border-color: rgba(56, 34, 11, .84) !important;
+}
+
+
+.isso-postbox>.form-wrapper>.auth-section input[type=button],
+.isso-postbox>.form-wrapper>.auth-section input[type=submit] {
+    width: 100px;
+    border-radius: 3px !important;
+    color: rgb(91, 40, 11);
+    background-color: #fad070 !important;
+}
+
+
+.isso-postbox>.form-wrapper>.auth-section .input-wrapper input[name=website] {
+    display: none;
+}
+
+.isso-postbox>.form-wrapper>.auth-section .post-action>input {
+    font-size: 1em;
+}
+
+#isso-root {
+    padding: 20px 30px;
+    border-top: 3px dashed rgb(230, 230, 230);
+}
+
 /*===================================About Page Settings======================================================*/
 
 .about {
@@ -826,5 +913,15 @@ aside .topRocket {
 
     .turn-page div {
         opacity: 1;
+    }
+
+    .isso-postbox>.form-wrapper>.auth-section .post-action {
+        max-width: 50%;
+        width: calc(50% - 10px);
+    }
+
+    .isso-postbox>.form-wrapper>.auth-section input[type=button],
+    .isso-postbox>.form-wrapper>.auth-section input[type=submit] {
+        width: 100%;
     }
 }

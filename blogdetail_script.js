@@ -70,6 +70,9 @@ let menus = new Vue({
                     value.id = menu_index;
                 }
             });
+            this.$nextTick(function () {
+                $('.menu-list')[0].children[1].classList.add("list-item-active");
+            });
         }
     },
 });
@@ -100,17 +103,16 @@ let preOrnxt = new Vue({
                 preOrnxt.nxt = blogsName[1];
             }
         });
-        // $('.menu-list')[0].children[1].classList.add("list-item-active");
     },
     methods: {
         linkTo: function (value) {
             var nid = parseInt($('#blog_detail_ID')[0].value) + value;
-            window.location.href = rootsrc + 'home/blogdetail?id=' + nid;
+            window.location.href = rootsrc + 'home/blogdetail/' + nid;
         }
     }
 });
 
-let pre_index = 1;
+let pre_index = 0;
 
 document.addEventListener('scroll', function () {
     for (let now_index = 0; now_index < menu_index; now_index++) {
@@ -120,9 +122,17 @@ document.addEventListener('scroll', function () {
             $('.menu-list')[0].children[pre_index].classList.remove("list-item-active");
             $('.menu-list')[0].children[now_index].classList.add("list-item-active");
             pre_index = now_index;
-            console.log(now_index);
-            console.log(window.scrollY);
             break;
+        } else if (now_index === menu_index - 1) {
+            $('.menu-list')[0].children[pre_index].classList.remove("list-item-active");
+            $('.menu-list')[0].children[menu_index].classList.add("list-item-active");
+            pre_index = menu_index;
+        }
+    }
+
+    for (let now_index = 0; now_index < menu_index; now_index++) {
+        if (pre_index !== now_index) {
+            $('.menu-list')[0].children[now_index].classList.remove("list-item-active");
         }
     }
 });

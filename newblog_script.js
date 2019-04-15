@@ -83,7 +83,7 @@ let blogMsg = new Vue({
             blogMsg.rquestToServer("post", rootsrc + "home/index");
         },
         updateForm: function () {
-            blogMsg.rquestToServer("put", rootsrc + "home/blogdetail?id=" + blogMsg.article.id);
+            blogMsg.rquestToServer("put", rootsrc + "home/blogdetail/" + blogMsg.article.id);
         }
     },
 });
@@ -97,13 +97,11 @@ window.onload = function () {
         tabSize: 4
     });
     simplemde.codemirror.on('drop', function (editor, e) {
-        console.log("codemirror on drop");
 
         if (!(e.dataTransfer && e.dataTransfer.files)) {
             alert("该浏览器不支持操作");
         }
         let dataList = e.dataTransfer.files;
-        console.log(dataList);
         let formData = new FormData();
         formData.append('file', dataList[0]);
         $.ajax({
