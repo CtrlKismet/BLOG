@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>个人博客</title>
-    <link href="./style.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" />
     <link rel="shortcut icon" id="web_icon" type="image/x-icon" href="./faviconIN.ico" />
 </head>
 
@@ -28,7 +28,7 @@
                 <div class="filter" v-show="isFilter">
                     {{message}}的查询结果：<span class="fa fa-remove" aria-hidden="true" @click="removeFilter"></span>
                 </div>
-                <blog-article v-for="art in blog" v-bind="art">
+                <blog-article v-for="art in blog" v-bind="art" :key="art.id">
                 </blog-article>
             </main>
             <aside>
@@ -48,6 +48,24 @@
                     <div class="list-title">标签</div>
                     <div class="list-item" v-for="item in tag">
                         <a @click="search_blog_by_tagid(item.id,item.name)">{{item.name}}</a>
+                    </div>
+                </div>
+                <div class="link-list">
+                    <div class="list-title">友链</div>
+                    <div class="list-item">
+                        <a href="http://www.baidu.com">测试</a>
+                    </div>
+                    <div class="list-item">
+                        <a href="http://www.baidu.com">测试</a>
+                    </div>
+                    <div class="list-item">
+                        <a href="http://www.baidu.com">测试</a>
+                    </div>
+                    <div class="list-item">
+                        <a href="http://www.baidu.com">测试</a>
+                    </div>
+                    <div class="list-item">
+                        <a href="http://www.baidu.com">测试</a>
                     </div>
                 </div>
                 <div class="topRocket">
@@ -72,8 +90,8 @@
     </div>
     <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.loli.net/ajax/libs/vue/2.6.10/vue.js"></script>
-    <script src="./script.js"></script>
-    <script src="./index_script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/index_script.js"></script>
 </body>
 
 </html>

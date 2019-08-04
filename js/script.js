@@ -1,5 +1,6 @@
-// var fade = ['Rotate3d(1,0,0,90deg)', 'Rotate3d(1,0,0,0deg)'];
 var fade = ['scale(0,0)', 'scale(1,1)'];
+//var fade = ['Rotate3d(1,0,0,90deg)', 'Rotate3d(1,0,0,0deg)'];
+
 var cnt = [0, 0, 0, 0, 0, 0],
     number = [-1, -1, -1, -1, -1, -1];
 
@@ -18,6 +19,7 @@ function refreshTime() {
         el.style.transform = fade[cnt[i]];
     }
 };
+
 
 let chznday = ['日', '一', '二', '三', '四', '五', '六'];
 var refresh_time_interval;
@@ -50,7 +52,6 @@ document.addEventListener('visibilitychange', function () {
 var topValue = 80,
     scrollValue = 260;
 
-//右侧目录（标签）随页面滑动而滑动
 document.addEventListener('scroll', function () {
     if (window.scrollY > topValue) {
         $('.head-bar').css('top', '-2.5em');
@@ -82,18 +83,10 @@ function loadEl() {
     get_time();
 }
 
-//文件树加载完成后
-$(document).ready(function () {
-    // if (window.innerWidth < 1100);
-    // else {
-    //     $('.main-page').css('display', 'block');
-    //     $('.loading-page').css('display', 'none');
-    // }
-    // loadEl();
-});
+$(document).ready(function () {});
 
-let rootsrc = "http://www.ctrlkismet.top/";
-// let rootsrc = "http://localhost:50542/";
+let rootsrc = "https://www.ctrlkismet.top/";
+//let rootsrc = "http://localhost:50542/";
 
 function listen_login(authent) {
     if (authent === 'True') return;

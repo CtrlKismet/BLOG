@@ -4,161 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>test</title>
-    <link href="https://cdn.bootcss.com/highlight.js/9.14.2/styles/vs.min.css" rel="stylesheet">
     <style>
-        html,
-        body {
-            height: 100%;
-            background-color: #e6e6e6;
+        /* (0,1,1,4) */
+        div .a main #a1 div h1 {
+            color: blue;
         }
 
-        section#isso-thread {
-            display: grid;
-            grid-template-rows: 20% 5% 75%;
-            grid-template-columns: 100%;
-            grid-template-areas: 'postbox''cnt''displaybox';
+        /* (0,1,1,3) */
+        div .a #a1 div h1 {
+            color: red;
         }
 
-        section * {
-            box-sizing: border-box;
+        [id$=2] {
+            color: orange;
         }
 
-        section h4 {
-            grid-area: cnt;
-            background-color: #fafafa;
-            border-radius: 5px;
-            box-shadow: 0 0 10px #ccc;
-            margin: 2em 0;
-        }
-
-        section .isso-postbox {
-            grid-area: postbox;
-            background-color: #fafafa;
-            border-radius: 5px;
-            box-shadow: 0 0 10px #ccc;
-        }
-
-        section #isso-root {
-            grid-area: displaybox;
-            background-color: #fafafa;
-            border-radius: 5px;
-            box-shadow: 0 0 10px #ccc;
-        }
-
-        .isso-comment>div.avatar {
-            display: block;
-            float: left;
-            width: 7%;
-            margin: 3px 15px 0 0;
-        }
-
-        .isso-postbox {
-            display: grid;
-            grid-template-rows: 10% 80% 10%;
-            grid-template-columns: 50% 50%;
-            grid-template-areas: 'name email''content content''preview upload';
-        }
-
-        .isso-postbox .textarea-wrapper {
-            grid-area: content;
-        }
-
-        section.auth-section p:nth-child(1) {
-            grid-area: name;
-        }
-
-        section.auth-section p:nth-child(2) {
-            grid-area: email;
-        }
-
-        section.auth-section p:nth-last-child(2) {
-            grid-area: upload;
-        }
-
-        section.auth-section p:nth-last-child(3) {
-            grid-area: preview;
+        div[id$=2] {
+            color: green;
         }
     </style>
 </head>
 
 <body>
-    <section id="isso-thread">
-        <h4>1 条评论</h4>
-        <div class="isso-postbox">
-            <div class="form-wrapper">
-                <div class="textarea-wrapper">
-                    <div contenteditable="true" class="textarea placeholder">在此输入评论 (最少 3 个字符)</div>
-                    <div class="preview">
-                        <div class="isso-comment">
-                            <div class="text-wrapper">
-                                <div class="text"></div>
-                            </div>
-                        </div>
+    <div id="b2">234</div>
+    <div>
+        <div class="a">
+            <main>
+                <aside id="a1">
+                    <div>
+                        <h1>hello world!</h1>
                     </div>
-                </div>
-                <section class="auth-section">
-                    <p class="input-wrapper"><input type="text" name="author" placeholder="名字 (可选)" value="CtrlKismet">
-                    </p>
-                    <p class="input-wrapper"><input type="email" name="email" placeholder="电子邮箱 (可选)" value=""></p>
-                    <p class="input-wrapper" style="display:none;"><input type="text" name="website"
-                            placeholder="网站 (可选)" value=""></p>
-                    <p class="post-action"><input type="submit" value="提交"></p>
-                    <p class="post-action"><input type="button" name="preview" value="预览"></p>
-                    <p class="post-action" style="display:none;"><input type="button" name="edit" value="编辑"></p>
-                </section>
-                <section class="notification-section" style="display: none;"><label><input type="checkbox"
-                            name="notification">有新回复时发送邮件通知</label></section>
-            </div>
+                </aside>
+            </main>
         </div>
-        <div id="isso-root">
-            <div id="isso-1" class="isso-comment isso-no-votes">
-                <div class="avatar"><svg version="1.1" viewBox="0 0 48 48" preserveAspectRatio="xMinYMin meet"
-                        shape-rendering="crispEdges" data-hash="add3f5f7203d">
-                        <rect x="0" y="0" width="56" height="56" style="fill: #f0f0f0"></rect>
-                        <rect x="4" y="4" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="36" y="4" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="4" y="12" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="36" y="12" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="4" y="36" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="36" y="36" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="20" y="20" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="20" y="28" width="8" height="8" style="fill: #f19670"></rect>
-                        <rect x="20" y="36" width="8" height="8" style="fill: #f19670"></rect>
-                    </svg></div>
-                <div class="text-wrapper">
-                    <div role="meta" class="isso-comment-header"><span class="author">CtrlKismet</span><span
-                            class="spacer">•</span><a href="#isso-1" class="permalink"><time
-                                title="Mon Apr 15 2019 22:01:16 GMT+0800 (中国标准时间)" datetime="2019-03-01T14:01:16Z">2
-                                分钟前</time></a><span class="note"></span></div>
-                    <div class="text">
-                        <p>comment css style modify</p>
-                    </div>
-                    <div class="isso-comment-footer"><span class="votes">0</span><a href="#" class="upvote">
-                            <!-- Generator: IcoMoon.io --><svg width="16" height="16" viewBox="0 0 32 32"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                fill="gray">
-                                <g>
-                                    <path
-                                        d="M 24.773,18.299c-0.651-0.669-7.512-7.203-7.512-7.203C 16.912,10.739, 16.456,10.56, 16,10.56c-0.458,0-0.914,0.179-1.261,0.536 c0,0-6.861,6.534-7.514,7.203c-0.651,0.669-0.696,1.872,0,2.586c 0.698,0.712, 1.669,0.77, 2.522,0L 16,14.89l 6.251,5.995 c 0.854,0.77, 1.827,0.712, 2.522,0C 25.47,20.17, 25.427,18.966, 24.773,18.299z">
-                                    </path>
-                                </g>
-                            </svg>
-                        </a><span class="spacer">|</span><a href="#" class="downvote">
-                            <!-- Generator: IcoMoon.io --><svg width="16" height="16" viewBox="0 0 32 32"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                fill="gray">
-                                <g>
-                                    <path
-                                        d="M 24.773,13.701c-0.651,0.669-7.512,7.205-7.512,7.205C 16.912,21.262, 16.456,21.44, 16,21.44c-0.458,0-0.914-0.178-1.261-0.534 c0,0-6.861-6.536-7.514-7.205c-0.651-0.669-0.696-1.87,0-2.586c 0.698-0.714, 1.669-0.77, 2.522,0L 16,17.112l 6.251-5.995 c 0.854-0.77, 1.827-0.714, 2.522,0C 25.47,11.83, 25.427,13.034, 24.773,13.701z">
-                                    </path>
-                                </g>
-                            </svg>
-                        </a><a href="#" class="reply">回复</a></div>
-                    <div class="isso-follow-up"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $.get('https://www.rouroushu.com/book/75637/15432978.html', function (htmlDoc) {
+            console.log(htmlDoc);
+        });
+    </script>
 </body>
 
 </html>

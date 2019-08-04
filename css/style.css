@@ -2,6 +2,7 @@
 
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 ::selection {
@@ -256,7 +257,7 @@ hr {
     color: rgb(91, 40, 11);
     box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
     display: grid;
-    grid-template-rows: 100%;
+    /*grid-template-rows: 100%;*/
     grid-template-columns: 18% auto 18%;
     grid-template-areas: 'home name about';
     transition: top 1s;
@@ -338,7 +339,7 @@ hr {
 .content .article {
     margin: 5px;
     display: grid;
-    grid-template-rows: 100%;
+    /*grid-template-rows: 100%;*/
     grid-template-columns: 1% 99%;
     grid-template-areas: 'timeStamp ariticle';
     width: calc(100% - 10px);
@@ -459,7 +460,7 @@ hr {
     display: grid;
     grid-template-areas: 'pre nxt';
     grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+    /*grid-template-rows: 100%;*/
     font-size: .7em;
     user-select: none;
 }
@@ -479,9 +480,7 @@ hr {
 
 .turn-page .pre {
     margin-left: 5px;
-    grid-template-areas:
-        'icon .'
-        'icon .';
+    grid-template-areas: 'icon .''icon .';
     grid-template-columns: 30px calc(100% - 30px);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -490,9 +489,7 @@ hr {
 
 .turn-page .nxt {
     margin-right: 5px;
-    grid-template-areas:
-        '. icon'
-        '. icon';
+    grid-template-areas: '. icon''. icon';
     grid-template-columns: calc(100% - 30px) 30px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -515,6 +512,7 @@ hr {
 /*===================================Comments Settings======================================================*/
 #isso-thread {
     font-size: .8em;
+    margin: 5px !important;
     margin-top: 5em !important;
     background-color: #fafafa;
     border-radius: 5px;
@@ -542,7 +540,7 @@ hr {
 
 .isso-postbox>.form-wrapper .textarea,
 .isso-postbox>.form-wrapper .preview {
-    background-color: #ffffff00 !important;
+    background: none !important;
     border: none !important;
     border-radius: 0 !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -564,7 +562,7 @@ hr {
 
 .isso-postbox>.form-wrapper>.auth-section .input-wrapper input {
     font-size: .8em;
-    background-color: #ffffff00 !important;
+    background: none !important;
     border: none !important;
     border-radius: 0 !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -644,6 +642,10 @@ aside .sculptrue>img {
     font-size: .8em;
     font-family: 'PingFang SC', Calibri, 'Trebuchet MS', sans-serif;
     width: 100%;
+}
+
+.CodeMirror {
+    box-sizing: border-box;
 }
 
 div[class*=fullscreen],
@@ -808,7 +810,7 @@ aside .topRocket {
     height: 3.5em;
     font-size: .8em;
     display: grid;
-    grid-template-rows: 100%;
+    /*grid-template-rows: 100%;*/
     grid-template-columns: auto 37% 37% auto;
     grid-template-areas: '. text beian .';
     align-items: center;
