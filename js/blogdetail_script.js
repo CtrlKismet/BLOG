@@ -2,7 +2,7 @@ let smde = new SimpleMDE({
     element: document.getElementById("blogContent"),
     autoDownloadFontAwesome: false,
     spellChecker: false,
-    status: false,
+    status: ["lines", "words"],
     tabSize: 4
 });
 

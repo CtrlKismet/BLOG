@@ -26,11 +26,12 @@
         </nav>
         <div class="content">
             <main id="home">
-                <div class="filter" v-show="isFilter">
-                    {{message}}的查询结果：<span class="fa fa-remove" aria-hidden="true" @click="removeFilter"></span>
+                <div class="blog-archive">
+                    <div :title="(blog_timeYear-1)+'年共'+blog_count[1]+'篇'" class="blog-year">
+                        {{(blog_timeYear-1)}}
+                    </div>
+                    <blog-msg v-for="blog in blog_msg[1]" v-bind="blog" :key="blog.id"></blog-msg>
                 </div>
-                <blog-article v-for="art in blog" v-bind="art" :key="art.id">
-                </blog-article>
             </main>
             <aside>
                 <div class="clock">
@@ -45,30 +46,6 @@
                 </div>
                 <div id="YYMMDD"></div>
                 <hr />
-                <div class="tag-list" id="list_of_tags">
-                    <div class="list-title">标签</div>
-                    <div class="list-item" v-for="item in tag">
-                        <a @click="search_blog_by_tagid(item.id,item.name)">{{item.name}}</a>
-                    </div>
-                </div>
-                <div class="link-list">
-                    <div class="list-title">友链</div>
-                    <div class="list-item">
-                        <a href="http://www.baidu.com">测试</a>
-                    </div>
-                    <div class="list-item">
-                        <a href="http://www.baidu.com">测试</a>
-                    </div>
-                    <div class="list-item">
-                        <a href="http://www.baidu.com">测试</a>
-                    </div>
-                    <div class="list-item">
-                        <a href="http://www.baidu.com">测试</a>
-                    </div>
-                    <div class="list-item">
-                        <a href="http://www.baidu.com">测试</a>
-                    </div>
-                </div>
                 <div class="topRocket">
                     <i class="fa fa-3x fa-arrow-up" onclick="UpToTop()"></i>
                 </div>
@@ -92,7 +69,7 @@
     <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.loli.net/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/index_script.js"></script>
+    <script src="./js/archive_script.js"></script>
 </body>
 
 </html>

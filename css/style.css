@@ -3,6 +3,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    transition: none !important;
 }
 
 ::selection {
@@ -50,153 +51,6 @@ hr {
     margin-top: 2px;
     box-shadow: 0 0 5px #ccc;
     color: white;
-}
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.fa {
-    display: inline-block;
-    font: normal normal normal .6em/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.fa-remove:before {
-    content: "\f00d";
-}
-
-.fa-bold:before {
-    content: "\f032";
-}
-
-.fa-italic:before {
-    content: "\f033";
-}
-
-.fa-header:before {
-    content: "\f1dc";
-}
-
-.fa-quote-left:before {
-    content: "\f10d";
-}
-
-.fa-list-ul:before {
-    content: "\f0ca";
-}
-
-.fa-list-ol:before {
-    content: "\f0cb";
-}
-
-.fa-link:before {
-    content: "\f0c1";
-}
-
-.fa-picture-o:before {
-    content: "\f03e";
-}
-
-.fa-eye:before {
-    content: "\f06e";
-}
-
-.fa-columns:before {
-    content: "\f0db";
-}
-
-.fa-arrows-alt:before {
-    content: "\f0b2";
-}
-
-.fa-question-circle:before {
-    content: "\f059";
-}
-
-.fa-spin {
-    -webkit-animation: fa-spin 2s infinite linear;
-    animation: fa-spin 2s infinite linear;
-}
-
-.fa-arrow-circle-o-up:before {
-    content: "\f01b";
-}
-
-.fa-arrow-up:before {
-    content: "\f062";
-}
-
-.fa-arrow-left:before {
-    content: "\f060";
-}
-
-.fa-arrow-right:before {
-    content: "\f061";
-}
-
-.fa-plus:before {
-    content: "\f067";
-}
-
-.fa-sign-out:before {
-    content: "\f08b";
-}
-
-.fa-edit:before,
-.fa-pencil-square-o:before {
-    content: "\f044";
-}
-
-@-webkit-keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
-@keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
-.fa-spinner:before {
-    content: "\f110";
-}
-
-.fa-5x {
-    font-size: 4em;
-}
-
-.fa-3x {
-    font-size: 2em;
-}
-
-.MathJax {
-    outline: 0;
-}
-
-.MathJax span {
-    font-size: 1em;
 }
 
 .ellipsis {
@@ -610,6 +464,30 @@ aside .sculptrue {
 aside .sculptrue>img {
     width: 100%;
     border-radius: 5%;
+}
+
+/*===================================Archive Settings======================================================*/
+.blog-archive {
+    padding: 20px 20px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: #fafafa;
+}
+
+.blog-archive .blog-year {
+    width: 4em;
+    text-align: center;
+}
+
+.blog-archive .blog-detail {
+    display: grid;
+    grid-template-areas: '. .';
+    grid-template-columns: 4em auto;
+}
+
+.blog-detail .archive-vertical-line {
+    margin-left: 2em;
+    border-left: 2px solid black;
 }
 
 /*===================================Add Blog Settings======================================================*/
