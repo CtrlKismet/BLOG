@@ -96,3 +96,6 @@ function listen_login(authent) {
         window.location.href = rootsrc + "authorization/login";
     }
 }
+
+
+// docker run -v /home/web/imgblogres:/home/img  --name blog -p 5000:80 -d blog

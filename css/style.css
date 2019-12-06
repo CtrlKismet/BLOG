@@ -1,5 +1,10 @@
 /*======================================Gloal Settings================================================*/
 
+/* :root {
+    --Color-Brown: rgba(56, 34, 11, .7);
+    --Color-Yellow: rgb(255, 203, 83);
+} */
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -113,7 +118,7 @@ hr {
     display: grid;
     /*grid-template-rows: 100%;*/
     grid-template-columns: 18% auto 18%;
-    grid-template-areas: 'home name about';
+    grid-template-areas: 'home menu about';
     transition: top 1s;
 }
 
@@ -122,25 +127,22 @@ hr {
     padding: 0 10px;
     height: 100%;
     line-height: 2.3em;
-    transition: background-color .4s, opacity .5s;
+    transition: background-color .4s, opacity .5s 2s;
 }
 
-.head-bar div:first-child {
+.head-bar div.headbar-home {
     grid-area: home;
     justify-self: end;
-    transition-delay: 0s, 2s;
 }
 
-.head-bar div#ctrlkismet {
-    grid-area: name;
-    justify-self: center;
-    transition-delay: 0s, 1.5s;
+.head-bar div#headbar-menu {
+    grid-area: menu;
+    justify-self: start;
 }
 
-.head-bar div:last-child {
+.head-bar div.headbar-about {
     grid-area: about;
     justify-self: start;
-    transition-delay: 0s, 2s;
 }
 
 .head-bar a {
@@ -468,26 +470,68 @@ aside .sculptrue>img {
 
 /*===================================Archive Settings======================================================*/
 .blog-archive {
-    padding: 20px 20px;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 7px;
+    padding: 20px 35px 20px 20px;
+    border-radius: 7px;
     background-color: #fafafa;
+    box-shadow: 0 0 10px #ccc;
+    margin: 0 5px 1em 5px;
 }
 
-.blog-archive .blog-year {
-    width: 4em;
-    text-align: center;
+.blog-archive .archive-header {
+    display: grid;
+    grid-template-columns: 3em auto 6em;
+    justify-items: end;
+    align-items: center;
+}
+
+.blog-archive .archive-header .blog-year {
+    justify-self: center;
+}
+
+.blog-archive .archive-content {
+    margin-left: 1.5em;
+    border-left: 2px solid rgba(56, 34, 11, .7);
 }
 
 .blog-archive .blog-detail {
+    padding: .5em 0;
+    font-size: .8em;
     display: grid;
-    grid-template-areas: '. .';
-    grid-template-columns: 4em auto;
+    grid-template-columns: 20px auto 5em;
 }
 
-.blog-detail .archive-vertical-line {
-    margin-left: 2em;
-    border-left: 2px solid black;
+.blog-detail .archive-points {
+    color: rgb(114, 99, 83);
+    /* rgb(255, 203, 83); */
+    font-size: .3em;
+    align-self: center;
+    margin-left: -.5em;
+    transition: color .4s !important;
+}
+
+.blog-detail:hover .archive-points {
+    color: rgb(255, 203, 83);
+}
+
+.blog-detail div.ellipsis {
+    cursor: pointer;
+}
+
+.blog-detail a {
+    text-decoration: none;
+    color: black;
+}
+
+.blog-detail div:last-child {
+    width: 100%;
+    cursor: pointer;
+    text-align: end;
+}
+
+.blog-archive .archive-footer {
+    width: 1em;
+    margin-left: calc(1em + 1px);
+    border-top: 2px solid rgba(56, 34, 11, .7);
 }
 
 /*===================================Add Blog Settings======================================================*/

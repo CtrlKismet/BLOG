@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>个人博客</title>
+    <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet" />
-    <link href="./css/global.css" rel="stylesheet" />
     <link rel="shortcut icon" id="web_icon" type="image/x-icon" href="./faviconIN.ico" />
 </head>
 
@@ -26,12 +26,19 @@
         </nav>
         <div class="content">
             <main id="home">
-                <div class="blog-archive">
-                    <div :title="(blog_timeYear-1)+'年共'+blog_count[1]+'篇'" class="blog-year">
-                        {{(blog_timeYear-1)}}
+                <archive_blog v-for="(value,index) in blog_msg" :blog_msg="value" :i="index" :key="index">
+                </archive_blog>
+                <!-- <div class="blog-archive">
+                    <div class="archive-header">
+                        <div class="blog-year">{{(blog_timeYear-1)}}</div>
+                        <div></div>
+                        <div>{{'共'+blog_count[1]+'篇'}}</div>
                     </div>
-                    <blog-msg v-for="blog in blog_msg[1]" v-bind="blog" :key="blog.id"></blog-msg>
-                </div>
+                    <div class="archive-content">
+                        <blog-msg v-for="blog in blog_msg[1]" v-bind="blog" :key="blog.id"></blog-msg>
+                    </div>
+                    <div class="archive-footer"></div>
+                </div> -->
             </main>
             <aside>
                 <div class="clock">

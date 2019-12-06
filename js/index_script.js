@@ -64,7 +64,7 @@ Vue.component('blog-article', {
                         <p>{{addMonthDay}}</p> \
                     </div> \
                     <div class="art-content" @click="linkTo(url)"> \
-                        <a :href="url"><div class="art-title">{{title}}</div></a> \
+                        <a :href="url"><div class="art-title ellipsis">{{title}}</div></a> \
                         <a :href="url"><div class="art-ellipsis">{{ellipsisContent}}</div></a> \
                     </div> \
                 </div>'

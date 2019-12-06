@@ -5,45 +5,21 @@
     <meta charset="UTF-8">
     <title>test</title>
     <style>
-        /* (0,1,1,4) */
-        div .a main #a1 div h1 {
-            color: blue;
+        @font-face {
+            font-family: 'pinghei';
+            src: url('./fonts/HYMiaoHunTiW.ttf');
+            font-weight: normal;
+            font-style: normal;
         }
 
-        /* (0,1,1,3) */
-        div .a #a1 div h1 {
-            color: red;
-        }
-
-        [id$=2] {
-            color: orange;
-        }
-
-        div[id$=2] {
-            color: green;
+        body {
+            font-family: 'pinghei';
         }
     </style>
 </head>
 
 <body>
-    <div id="b2">234</div>
-    <div>
-        <div class="a">
-            <main>
-                <aside id="a1">
-                    <div>
-                        <h1>hello world!</h1>
-                    </div>
-                </aside>
-            </main>
-        </div>
-    </div>
-    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $.get('https://www.rouroushu.com/book/75637/15432978.html', function (htmlDoc) {
-            console.log(htmlDoc);
-        });
-    </script>
+    <div>0123456789</div>
 </body>
 
 </html>
