@@ -86,7 +86,7 @@ function loadEl() {
 $(document).ready(function () {});
 
 let rootsrc = "https://ctrlkismet.top/";
-//let rootsrc = "http://localhost:50542/";
+// let rootsrc = "http://localhost:50542/";
 
 function listen_login(authent) {
     if (authent === 'True') return;

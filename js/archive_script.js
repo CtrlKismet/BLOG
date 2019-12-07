@@ -11,8 +11,8 @@ let blog_arch = {
     },
     template: '<div class="blog-detail"> \
                     <div class="fa fa-circle archive-points"></div> \
-                    <div class="ellipsis"><a :href="blog.url">{{blog.title}}</a></div> \
-                    <div>{{blog.time}}</div> \
+                    <div class="blog-ellipsis ellipsis"><a :href="blog.url">{{blog.title}}</a></div> \
+                    <div class="blog-time">{{blog.time}}</div> \
                 </div>'
 };
 
@@ -41,7 +41,7 @@ let archive_blog = {
     },
     template: '<div class="blog-archive"> \
                     <div class="archive-header"> \
-                    <div class="blog-year">{{(timeYear-i)}}</div> \
+                    <div class="archive-year">{{(timeYear-i)}}</div> \
                     <div></div> \
                     <div>{{"共"+count[i]+"篇"}}</div> \
                 </div> \

@@ -484,7 +484,7 @@ aside .sculptrue>img {
     align-items: center;
 }
 
-.blog-archive .archive-header .blog-year {
+.blog-archive .archive-header .archive-year {
     justify-self: center;
 }
 
@@ -497,16 +497,44 @@ aside .sculptrue>img {
     padding: .5em 0;
     font-size: .8em;
     display: grid;
+    height: 2.7em;
     grid-template-columns: 20px auto 5em;
+    align-items: center;
 }
 
 .blog-detail .archive-points {
     color: rgb(114, 99, 83);
     /* rgb(255, 203, 83); */
     font-size: .3em;
-    align-self: center;
     margin-left: -.5em;
-    transition: color .4s !important;
+    transition: color .3s !important;
+}
+
+.blog-detail .blog-ellipsis {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.blog-detail .blog-time {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.blog-detail .blog-ellipsis,
+.blog-detail .blog-time {
+    transition: all .3s !important;
+}
+
+.blog-detail:hover .blog-ellipsis {
+    font-size: 1.5em;
+    background: linear-gradient(to left, #ffcb5330, #ffcb5399);
+    padding: .1em 0 .1em .5em;
+}
+
+.blog-detail:hover .blog-time {
+    font-size: 1.5em;
+    background: linear-gradient(to right, #ffcb5330, #ffcb5320);
+    padding: .1em .5em .1em 0;
 }
 
 .blog-detail:hover .archive-points {
